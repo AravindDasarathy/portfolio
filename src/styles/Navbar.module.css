@@ -16,13 +16,6 @@
   transform: translate(0, 0);
 }
 
-.navbar[class*=headroom--not-top] {
-  background: #ffffff;
-  border-bottom: 1px solid #f0f0f0;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
 .navbar-light .navbar-toggler-icon {
   background: none;
 }
@@ -33,17 +26,6 @@
 
 .navbar-brand .uil {
   font-size: 40px;
-}
-
-.social-links .uil {
-  color: #474559;
-  font-size: 20px;
-  display: block;
-  margin: 5px 0;
-}
-
-.social-links .uil:hover {
-  color: #ffc200;
 }
 
 .navbar-light .navbar-toggler-icon {
@@ -82,7 +64,8 @@
   display: inline-block;
   transition: transform 0.3s;
 }
-.nav-link span:before {
+
+.nav-link span::before {
   position: absolute;
   top: 100%;
   content: attr(data-hover);
