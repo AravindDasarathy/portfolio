@@ -27,12 +27,34 @@ const toggleColorMode = () => {
   $('body').toggleClass('dark-mode');
 };
 
+const handleClick = (event: MouseEvent) => {
+  const $anchor = $(event.currentTarget);
+
+  $('html, body')
+    .stop()
+    .animate(
+      {
+        scrollTop: $($anchor.attr('href').slice(1)).offset().top - 49
+      },
+      500
+    );
+  event.preventDefault();
+};
+
 export default function Navbar() {
   useEffect(() => {
     $('.color-mode').on('click', toggleColorMode);
 
     return () => {
       $('.color-mode').off('click', toggleColorMode);
+    };
+  }, []);
+
+  useEffect(() => {
+    $('.nav-link, .custom-btn-link').on('click', handleClick);
+
+    return () => {
+      $('.nav-link, .custom-btn-link').off('click', handleClick);
     };
   }, []);
 
