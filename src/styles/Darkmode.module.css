@@ -10,11 +10,6 @@
   color: #ffc200;
 }
 
-.dark-mode .navbar[class*=headroom--not-top] {
-  background: #0c0c0d;
-  border-bottom: 1px solid #1f1f1f;
-}
-
 .dark-mode .small-text {
   background: #0d0c15;
   color: #ffffff;

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { useEffect } from "react";
+import $ from "jquery";
 
 import navStyles from "../styles/Navbar.module.css";
 
@@ -21,7 +23,19 @@ const navbarData = [
   },
 ];
 
+const toggleColorMode = () => {
+  $('body').toggleClass('dark-mode');
+};
+
 export default function Navbar() {
+  useEffect(() => {
+    $('.color-mode').on('click', toggleColorMode);
+
+    return () => {
+      $('.color-mode').off('click', toggleColorMode);
+    };
+  }, []);
+
   return (
     <nav
       className={`navbar navbar-expand-sm navbar-light
