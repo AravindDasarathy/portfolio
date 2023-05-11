@@ -35,11 +35,12 @@ export default function About() {
           <div className="col-lg-auto col-md-12 col-12">
             <div className={aboutStyles['about-image']}>
               <Image
-                src="/svg/coder.svg"
+                src="/images/coder.svg"
                 className="img-fluid"
                 alt="svg image"
                 width={200}
                 height={200}
+                priority={true}
               />
             </div>
           </div>

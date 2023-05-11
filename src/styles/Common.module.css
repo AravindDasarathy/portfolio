@@ -45,6 +45,12 @@ ul li {
   list-style: none;
 }
 
+.arrow-icons {
+  --fa-secondary-opacity: 0.1;
+  --fa-primary-color: #363636;
+  --fa-secondary-color: #363636;
+}
+
 @media (max-width: 767px) {
   h1 {
     font-size: 2.4em;
