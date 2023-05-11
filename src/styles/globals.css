@@ -1,3 +1,4 @@
 /* @import 'bootstrap/dist/css/bootstrap.min.css'; */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import './Common.module.css';
+@import './owl-carousel.css';
