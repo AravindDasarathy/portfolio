@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAnglesRight, faAnglesLeft} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAnglesRight, faAnglesLeft } from '@fortawesome/free-solid-svg-icons';
 
 export function LeftArrow() {
   return (

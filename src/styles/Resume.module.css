@@ -8,7 +8,7 @@
 }
 
 .timeline-wrapper:before {
-  content: "";
+  content: '';
   background: #ffc200;
   width: 3px;
   height: 100%;

@@ -118,7 +118,6 @@ const skillData = [
   }
 ];
 
-
 export default function Skills() {
   return (
     <section id="skills">
@@ -135,17 +134,17 @@ export default function Skills() {
               {skill.data.map((data, index) => (
                 <div key={index} className={`progress ${skillStyles.progress}`}>
                   <div
-                    className={`progress-bar ${skillStyles["progress-bar"]}`}
+                    className={`progress-bar ${skillStyles['progress-bar']}`}
                     role="progressbar"
                     style={{ width: data.percentage }}
                     aria-valuenow={data.value}
                     aria-valuemin={0}
                     aria-valuemax={100}
                   >
-                    <span className={skillStyles["progress-bar-title"]}>
+                    <span className={skillStyles['progress-bar-title']}>
                       {data.name}
                     </span>
-                    <span className={skillStyles["progress-bar-number"]}>
+                    <span className={skillStyles['progress-bar-number']}>
                       {data.percentage}
                     </span>
                   </div>

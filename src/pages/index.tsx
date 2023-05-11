@@ -1,4 +1,4 @@
-import { About, Project, Resume, Skill } from "@/components";
+import { About, Project, Resume, Skill } from '@/components';
 
 export default function Home() {
   return (

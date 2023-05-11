@@ -2,7 +2,12 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Carousel from './utils/owl-carousel';
 
-const projectPics = ['portal-login', 'portal-signup', 'portal-dashboard', 'new-ticket'];
+const projectPics = [
+  'portal-login',
+  'portal-signup',
+  'portal-dashboard',
+  'new-ticket'
+];
 
 export default function Project() {
   const [isMounted, setIsMounted] = useState(false);
@@ -20,13 +25,16 @@ export default function Project() {
 
             {isMounted && (
               <Carousel>
-                {
-                  projectPics.map((pic, index) => (
-                    <div className="item" key={index}>
-                      <Image src={`/images/project/${pic}.png`} alt="project image" width={700} height={700} />
-                    </div>
-                  ))
-                }
+                {projectPics.map((pic, index) => (
+                  <div className="item" key={index}>
+                    <Image
+                      src={`/images/project/${pic}.png`}
+                      alt="project image"
+                      width={700}
+                      height={700}
+                    />
+                  </div>
+                ))}
               </Carousel>
             )}
           </div>

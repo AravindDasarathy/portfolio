@@ -1,29 +1,30 @@
-import aboutStyles from "../styles/About.module.css";
-import Image from "next/image";
+import aboutStyles from '../styles/About.module.css';
+import Image from 'next/image';
 
-const aboutData = [
-  "Aravind",
-  "Software Engineer",
-  "Full Stack Developer"
-];
+const aboutData = ['Aravind', 'Software Engineer', 'Full Stack Developer'];
 
-const whatAmI = "I find joy in solving problems, whether it's working through a chess puzzle or crafting an algorithm to do the same.";
+const whatAmI =
+  "I find joy in solving problems, whether it's working through a chess puzzle or crafting an algorithm to do the same.";
 
 export default function About() {
   return (
     <section
-      className={`about ${aboutStyles["full-screen"]} d-lg-flex justify-content-center align-items-center"`}
+      className={`about ${aboutStyles['full-screen']} d-lg-flex justify-content-center align-items-center"`}
       id="about"
     >
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-7 col-md-12 col-12 d-flex align-items-center">
             <div className={aboutStyles['about-text']}>
-              <h1 className={`${aboutStyles.headline} ${aboutStyles.animated} ${aboutStyles['animated-text']}`}>
+              <h1
+                className={`${aboutStyles.headline} ${aboutStyles.animated} ${aboutStyles['animated-text']}`}
+              >
                 <span className="me-3 d-inline-block">I'm</span>
                 <div className={aboutStyles['animated-info']}>
                   {aboutData.map((item, index) => (
-                    <span className={aboutStyles['animated-item']} key={index}>{item}</span>
+                    <span className={aboutStyles['animated-item']} key={index}>
+                      {item}
+                    </span>
                   ))}
                 </div>
               </h1>

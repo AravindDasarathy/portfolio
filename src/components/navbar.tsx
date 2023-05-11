@@ -1,26 +1,26 @@
-import Link from "next/link";
-import { useEffect } from "react";
-import $ from "jquery";
+import Link from 'next/link';
+import { useEffect } from 'react';
+import $ from 'jquery';
 
-import navStyles from "../styles/Navbar.module.css";
+import navStyles from '../styles/Navbar.module.css';
 
 const navbarData = [
   {
-    href: "#about",
-    text: "About",
+    href: '#about',
+    text: 'About'
   },
   {
-    href: "#project",
-    text: "Projects",
+    href: '#project',
+    text: 'Projects'
   },
   {
-    href: "#resume",
-    text: "Resume",
+    href: '#resume',
+    text: 'Resume'
   },
   {
-    href: "#skills",
-    text: "Skills",
-  },
+    href: '#skills',
+    text: 'Skills'
+  }
 ];
 
 const toggleColorMode = () => {
@@ -39,15 +39,15 @@ export default function Navbar() {
   return (
     <nav
       className={`navbar navbar-expand-sm navbar-light
-      ${navStyles.navbar} ${navStyles["navbar-expand-sm"]} ${navStyles["navbar-light"]}`}
+      ${navStyles.navbar} ${navStyles['navbar-expand-sm']} ${navStyles['navbar-light']}`}
     >
       <div className="container">
-        <Link className={`navbar-brand ${navStyles["navbar-brand"]}`} href="/">
+        <Link className={`navbar-brand ${navStyles['navbar-brand']}`} href="/">
           Aravind
         </Link>
 
         <button
-          className={`navbar-toggler ${navStyles["navbar-toggler"]}`}
+          className={`navbar-toggler ${navStyles['navbar-toggler']}`}
           type="button"
           data-toggle="collapse"
           data-target="#navbarNav"
@@ -56,23 +56,23 @@ export default function Navbar() {
           aria-label="Toggle navigation"
         >
           <span
-            className={`navbar-toggler-icon ${navStyles["navbar-toggler-icon"]}`}
+            className={`navbar-toggler-icon ${navStyles['navbar-toggler-icon']}`}
           ></span>
           <span
-            className={`navbar-toggler-icon ${navStyles["navbar-toggler-icon"]}`}
+            className={`navbar-toggler-icon ${navStyles['navbar-toggler-icon']}`}
           ></span>
           <span
-            className={`navbar-toggler-icon ${navStyles["navbar-toggler-icon"]}`}
+            className={`navbar-toggler-icon ${navStyles['navbar-toggler-icon']}`}
           ></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className={`navbar-nav ${navStyles["navbar-nav"]} mx-auto`}>
+          <ul className={`navbar-nav ${navStyles['navbar-nav']} mx-auto`}>
             {navbarData.map((item, index) => (
               <li className="nav-item" key={index}>
                 <Link
                   href={item.href}
-                  className={`nav-link ${navStyles["nav-link"]}`}
+                  className={`nav-link ${navStyles['nav-link']}`}
                 >
                   <span data-hover={item.text}>{item.text}</span>
                 </Link>
@@ -80,10 +80,10 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <ul className={`navbar-nav ${navStyles["navbar-nav"]} ml-lg-auto`}>
+          <ul className={`navbar-nav ${navStyles['navbar-nav']} ml-lg-auto`}>
             <div className="ml-lg-4">
               <div
-                className={`color-mode ${navStyles["color-mode"]} d-lg-flex justify-content-center align-items-center`}
+                className={`color-mode ${navStyles['color-mode']} d-lg-flex justify-content-center align-items-center`}
               >
                 Color mode
               </div>

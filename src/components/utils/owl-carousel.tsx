@@ -5,10 +5,7 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import dynamic from 'next/dynamic';
 import ReactDOMServer from 'react-dom/server';
 
-const OwlCarousel = dynamic(
-  () => import('react-owl-carousel'),
-  { ssr: false }
-);
+const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
 
 import { LeftArrow, RightArrow } from './icons';
 
@@ -25,9 +22,7 @@ type CarouselOptions = {
   userOpts?: Object;
 };
 
-export default function Carousel(
-  { children, userOpts = {} }: CarouselOptions
-) {
+export default function Carousel({ children, userOpts = {} }: CarouselOptions) {
   const finalOpts = { ...options, ...userOpts };
 
   return (
@@ -37,8 +32,9 @@ export default function Carousel(
         ReactDOMServer.renderToString(<LeftArrow />),
         ReactDOMServer.renderToString(<RightArrow />)
       ]}
-      { ...finalOpts }>
+      {...finalOpts}
+    >
       {children}
     </OwlCarousel>
   );
-};
+}

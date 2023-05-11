@@ -9,7 +9,7 @@ const metadata = {
 };
 
 type RootLayoutProps = {
-  children: React.ReactNode
+  children: React.ReactNode;
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
@@ -17,7 +17,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <>
       <Head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
         <meta name="description" content={metadata.description} />
         <meta name="author" content="Aravind" />
         <title>{metadata.title}</title>
