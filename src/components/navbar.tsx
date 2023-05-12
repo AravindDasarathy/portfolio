@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import $ from 'jquery';
 import { createPopper } from '@popperjs/core';
+import Headroom from 'react-headroom';
 
 import navStyles from '../styles/Navbar.module.css';
 
@@ -72,10 +73,10 @@ export default function Navbar() {
           {
             name: 'offset',
             options: {
-              offset: [0, 10],
-            },
-          },
-        ],
+              offset: [0, 10]
+            }
+          }
+        ]
       });
 
       const showNavbarMenu = () => {
@@ -100,62 +101,75 @@ export default function Navbar() {
     }
   }, []);
 
+  const [isVisible, setIsVisible] = useState(true);
+
+  const handleVisibilityChange = (isVisible: boolean) => {
+    console.log(isVisible);
+    setIsVisible(isVisible);
+  };
+
   return (
-    <nav
-      className={`navbar navbar-expand-sm navbar-light
-      ${navStyles.navbar} ${navStyles['navbar-expand-sm']} ${navStyles['navbar-light']}`}
-    >
-      <div className="container">
-        <Link className={`navbar-brand ${navStyles['navbar-brand']}`} href="/">
-          Aravind
-        </Link>
+    <Headroom onUnpin={() => handleVisibilityChange(false)} onPin={() => handleVisibilityChange(true)}>
+      <nav
+        className={`navbar navbar-expand-sm navbar-light
+      ${navStyles.navbar} ${navStyles['navbar-expand-sm']} ${navStyles['navbar-light']}
+      ${isVisible ? navStyles.visible : navStyles.hidden}`}
+      >
+        <div className="container py-3">
+          <Link
+            className={`navbar-brand ${navStyles['navbar-brand']}`}
+            href="/"
+          >
+            Aravind
+          </Link>
 
-        <button
-          className={`navbar-toggler ${navStyles['navbar-toggler']}`}
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          id="navbar-toggler"
-        >
-          <span
-            className={`navbar-toggler-icon ${navStyles['navbar-toggler-icon']}`}
-          ></span>
-          <span
-            className={`navbar-toggler-icon ${navStyles['navbar-toggler-icon']}`}
-          ></span>
-          <span
-            className={`navbar-toggler-icon ${navStyles['navbar-toggler-icon']}`}
-          ></span>
-        </button>
+          <button
+            className={`navbar-toggler ${navStyles['navbar-toggler']}`}
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            id="navbar-toggler"
+          >
+            <span
+              className={`navbar-toggler-icon ${navStyles['navbar-toggler-icon']}`}
+            ></span>
+            <span
+              className={`navbar-toggler-icon ${navStyles['navbar-toggler-icon']}`}
+            ></span>
+            <span
+              className={`navbar-toggler-icon ${navStyles['navbar-toggler-icon']}`}
+            ></span>
+          </button>
 
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className={`navbar-nav ${navStyles['navbar-nav']} mx-auto`}>
-            {navbarData.map((item, index) => (
-              <li className="nav-item" key={index}>
-                <Link
-                  href={item.href}
-                  className={`nav-link ${navStyles['nav-link']}`}
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className={`navbar-nav ${navStyles['navbar-nav']} mx-auto`}>
+              {navbarData.map((item, index) => (
+                <li className="nav-item" key={index}>
+                  <Link
+                    href={item.href}
+                    className={`nav-link ${navStyles['nav-link']}`}
+                  >
+                    <span data-hover={item.text}>{item.text}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <ul className={`navbar-nav ${navStyles['navbar-nav']} ml-lg-auto`}>
+              <div className="ml-lg-4">
+                <div
+                  className={`color-mode ${navStyles['color-mode']} d-lg-flex justify-content-center align-items-center`}
                 >
-                  <span data-hover={item.text}>{item.text}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          <ul className={`navbar-nav ${navStyles['navbar-nav']} ml-lg-auto`}>
-            <div className="ml-lg-4">
-              <div
-                className={`color-mode ${navStyles['color-mode']} d-lg-flex justify-content-center align-items-center`}
-              >
-                Color mode
+                  Color mode
+                </div>
               </div>
-            </div>
-          </ul>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </Headroom>
   );
 }

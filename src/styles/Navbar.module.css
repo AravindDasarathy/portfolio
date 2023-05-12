@@ -112,3 +112,11 @@
     padding: 3px 20px;
   }
 }
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
