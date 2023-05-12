@@ -42,3 +42,7 @@
   color: #ffc200;
   font-weight: 100;
 }
+
+.dark-mode .navbar-toggler .navbar-toggler-icon {
+  background-color: #ffffff;
+}
