@@ -83,7 +83,7 @@ export default function Navbar() {
   return (
     <Headroom onUnpin={() => handleVisibilityChange(false)} onPin={() => handleVisibilityChange(true)}>
       <nav
-        className={`navbar navbar-expand-sm navbar-light
+        className={`navbar navbar-expand-sm navbar-light visible
       ${navStyles.navbar} ${navStyles['navbar-expand-sm']} ${navStyles['navbar-light']}
       ${isVisible ? navStyles.visible : navStyles.hidden}`}
       >

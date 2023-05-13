@@ -46,3 +46,8 @@
 .dark-mode .navbar-toggler .navbar-toggler-icon {
   background-color: #ffffff;
 }
+
+.dark-mode .visible {
+  background: #0c0c0d;
+  border-bottom: 1px solid #1f1f1f;
+}
