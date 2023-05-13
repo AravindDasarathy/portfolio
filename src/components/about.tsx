@@ -4,7 +4,7 @@ import Image from 'next/image';
 const aboutData = ['Aravind', 'Software Engineer', 'Full Stack Developer'];
 
 const whatAmI =
-  "I find joy in solving problems, whether it\'s working through a chess puzzle or crafting an algorithm to do the same.";
+  "I find joy in solving problems, whether it is working through a chess puzzle or crafting an algorithm to do the same.";
 
 export default function About() {
   return (
