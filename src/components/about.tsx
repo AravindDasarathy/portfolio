@@ -17,7 +17,7 @@ export default function About() {
           <div className="col-lg-7 col-md-12 col-12 d-flex align-items-center">
             <div className={aboutStyles['about-text']}>
               <h1
-                className={`${aboutStyles.headline} ${aboutStyles.animated} ${aboutStyles['animated-text']}`}
+                className={`${aboutStyles.animated} ${aboutStyles['animated-text']}`}
               >
                 <span className="me-3 d-inline-block">I'm</span>
                 <div className={aboutStyles['animated-info']}>
