@@ -74,6 +74,27 @@ export default function Navbar() {
     ]
   });
 
+  useEffect(() => {
+    if (referenceElement.current && popperElement.current) {
+      referenceElement.current.addEventListener('click', () => {
+        if (popperElement.current?.classList.contains('show')) {
+          popperElement.current?.classList.remove('show');
+          referenceElement.current?.setAttribute('aria-expanded', 'false');
+        } else {
+          popperElement.current?.classList.add('show');
+          referenceElement.current?.setAttribute('aria-expanded', 'true');
+        }
+      });
+    }
+
+    return () => {
+      if (referenceElement.current && popperElement.current) {
+        referenceElement.current.removeEventListener('click', () => {});
+      }
+    };
+  }, []);
+
+
   const [isVisible, setIsVisible] = useState(true);
 
   const handleVisibilityChange = (isVisible: boolean) => {
@@ -103,7 +124,6 @@ export default function Navbar() {
             aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            id="navbar-toggler"
             ref={referenceElement}
           >
             <span
@@ -117,7 +137,7 @@ export default function Navbar() {
             ></span>
           </button>
 
-          <div className="collapse navbar-collapse" id="navbarNav" ref={popperElement}>
+          <div className={`collapse navbar-collapse ${navStyles['navbar-collapse']}`} id="navbarNav" ref={popperElement}>
             <ul className={`navbar-nav ${navStyles['navbar-nav']} mx-auto`}>
               {navbarData.map((item, index) => (
                 <li className="nav-item" key={index}>

@@ -111,6 +111,18 @@
   .navbar-expand-sm .navbar-nav .nav-link {
     padding: 3px 20px;
   }
+
+  .navbar-collapse {
+    background: #ffffff;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 991px) {
+  .color-mode {
+    display: none;
+  }
 }
 
 .visible {
@@ -123,4 +135,22 @@
 
 .hidden {
   display: none;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+.navbar-toggler[aria-expanded=true] .navbar-toggler-icon:first-child {
+  transform: rotate(45deg);
+  top: 6px;
+}
+
+.navbar-toggler[aria-expanded=true] .navbar-toggler-icon:nth-child(2) {
+  display: none;
+}
+
+.navbar-toggler[aria-expanded=true] .navbar-toggler-icon:last-child {
+  transform: rotate(-45deg);
+  bottom: 1px;
 }
