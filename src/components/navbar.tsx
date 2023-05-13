@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import $ from 'jquery';
-import { createPopper } from '@popperjs/core';
+import { usePopper } from 'react-popper';
 import Headroom from 'react-headroom';
 
 import navStyles from '../styles/Navbar.module.css';
@@ -60,51 +60,23 @@ export default function Navbar() {
     };
   }, []);
 
-  useEffect(() => {
-    const navbarToggle = $('#navbar-toggler')[0];
-    const navbarMenu = $('#navbarNav')[0];
+  const referenceElement = useRef<HTMLButtonElement>(null);;
+  const popperElement = useRef<HTMLDivElement>(null);
 
-    console.log(navbarToggle, navbarMenu);
-
-    if (navbarToggle && navbarMenu) {
-      const popperInstance = createPopper(navbarToggle, navbarMenu, {
-        placement: 'bottom-start',
-        modifiers: [
-          {
-            name: 'offset',
-            options: {
-              offset: [0, 10]
-            }
-          }
-        ]
-      });
-
-      const showNavbarMenu = () => {
-        navbarMenu.classList.add('show');
-        popperInstance.update();
-      };
-
-      const hideNavbarMenu = () => {
-        navbarMenu.classList.remove('show');
-      };
-
-      navbarToggle.addEventListener('click', () => {
-        if (navbarMenu.classList.contains('show')) {
-          hideNavbarMenu();
-        } else {
-          showNavbarMenu();
+  usePopper(referenceElement.current, popperElement.current, {
+    modifiers: [
+      {
+        name: 'offset',
+        options: {
+          offset: [0, 10]
         }
-      });
-
-      navbarMenu.addEventListener('mouseenter', showNavbarMenu);
-      navbarMenu.addEventListener('mouseleave', hideNavbarMenu);
-    }
-  }, []);
+      }
+    ]
+  });
 
   const [isVisible, setIsVisible] = useState(true);
 
   const handleVisibilityChange = (isVisible: boolean) => {
-    console.log(isVisible);
     setIsVisible(isVisible);
   };
 
@@ -132,6 +104,7 @@ export default function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
             id="navbar-toggler"
+            ref={referenceElement}
           >
             <span
               className={`navbar-toggler-icon ${navStyles['navbar-toggler-icon']}`}
@@ -144,7 +117,7 @@ export default function Navbar() {
             ></span>
           </button>
 
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div className="collapse navbar-collapse" id="navbarNav" ref={popperElement}>
             <ul className={`navbar-nav ${navStyles['navbar-nav']} mx-auto`}>
               {navbarData.map((item, index) => (
                 <li className="nav-item" key={index}>
