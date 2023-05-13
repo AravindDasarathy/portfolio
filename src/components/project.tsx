@@ -30,8 +30,11 @@ export default function Project() {
                     <Image
                       src={`/images/project/${pic}.png`}
                       alt="project image"
-                      width={700}
-                      height={700}
+                      layout="responsive"
+                      objectFit="cover"
+                      objectPosition="center"
+                      width={500}
+                      height={300}
                     />
                   </div>
                 ))}
