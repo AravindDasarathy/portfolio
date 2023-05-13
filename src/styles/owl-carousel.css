@@ -42,3 +42,9 @@
     bottom: 50px;
   }
 }
+
+@media (max-width: 767px) {
+  #project .owl-carousel .owl-nav button {
+    display: none;
+  }
+}

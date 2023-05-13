@@ -15,7 +15,7 @@ export default function Project() {
   useEffect(() => setIsMounted(true), []);
 
   return (
-    <section className="py-5" id="project">
+    <section className="py-5 mx-auto" id="project">
       <div className="container">
         <div className="row">
           <div className="col-lg-11 text-center mx-auto col-12">

@@ -1,5 +1,6 @@
 /* @import 'bootstrap/dist/css/bootstrap.min.css'; */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import './Common.module.css';
-@import './Darkmode.module.css';
+@import './headroom.css';
 @import './owl-carousel.css';
+@import './Darkmode.module.css';

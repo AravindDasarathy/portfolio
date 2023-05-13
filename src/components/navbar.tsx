@@ -60,7 +60,7 @@ export default function Navbar() {
     };
   }, []);
 
-  const referenceElement = useRef<HTMLButtonElement>(null);;
+  const referenceElement = useRef<HTMLButtonElement>(null);
   const popperElement = useRef<HTMLDivElement>(null);
 
   usePopper(referenceElement.current, popperElement.current, {
@@ -94,19 +94,11 @@ export default function Navbar() {
     };
   }, []);
 
-
-  const [isVisible, setIsVisible] = useState(true);
-
-  const handleVisibilityChange = (isVisible: boolean) => {
-    setIsVisible(isVisible);
-  };
-
   return (
-    <Headroom onUnpin={() => handleVisibilityChange(false)} onPin={() => handleVisibilityChange(true)}>
+    <Headroom disableInlineStyles={true}>
       <nav
         className={`navbar navbar-expand-sm navbar-light visible
-      ${navStyles.navbar} ${navStyles['navbar-expand-sm']} ${navStyles['navbar-light']}
-      ${isVisible ? navStyles.visible : navStyles.hidden}`}
+      ${navStyles.navbar} ${navStyles['navbar-expand-sm']} ${navStyles['navbar-light']}`}
       >
         <div className="container py-3">
           <Link
@@ -137,7 +129,11 @@ export default function Navbar() {
             ></span>
           </button>
 
-          <div className={`collapse navbar-collapse ${navStyles['navbar-collapse']}`} id="navbarNav" ref={popperElement}>
+          <div
+            className={`collapse navbar-collapse ${navStyles['navbar-collapse']}`}
+            id="navbarNav"
+            ref={popperElement}
+          >
             <ul className={`navbar-nav ${navStyles['navbar-nav']} mx-auto`}>
               {navbarData.map((item, index) => (
                 <li className="nav-item" key={index}>
