@@ -16,7 +16,7 @@
 }
 
 .headroom--unpinned {
-  /* position: fixed; */
+  position: fixed;
   transform: translateY(-100%);
 }
 

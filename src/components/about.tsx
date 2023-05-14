@@ -13,14 +13,14 @@ export default function About() {
       id="about"
     >
       <div className="container">
-        <div className="row justify-content-center">
+        <div className="row justify-content-center align-items-center">
           <div className="col-lg-7 col-md-12 col-12 d-flex align-items-center">
             <div className={aboutStyles['about-text']}>
               <h1
                 className={`${aboutStyles.animated} ${aboutStyles['animated-text']}`}
               >
                 <span className="me-3 d-inline-block">I'm</span>
-                <div className={aboutStyles['animated-info']}>
+                <div className={`${aboutStyles['animated-info']}`}>
                   {aboutData.map((item, index) => (
                     <span className={aboutStyles['animated-item']} key={index}>
                       {item}
