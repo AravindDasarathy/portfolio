@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import $ from 'jquery';
 import { usePopper } from 'react-popper';
 import Headroom from 'react-headroom';
+import Contact from './contact';
 
 import navStyles from '../styles/Navbar.module.css';
 
@@ -107,6 +108,8 @@ export default function Navbar() {
           >
             Aravind
           </Link>
+
+          <Contact />
 
           <button
             className={`navbar-toggler ${navStyles['navbar-toggler']}`}
