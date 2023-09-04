@@ -55,3 +55,11 @@
 .dark-mode svg {
   color: #ffffff;
 }
+
+.dark-mode .progress-bar {
+  color: #ffc200;
+}
+
+.dark-mode .progress-bar:before {
+  background-color: #474559;
+}
