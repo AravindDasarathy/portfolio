@@ -4,8 +4,8 @@ import { Email, LinkedIn, Github } from './utils/icons';
 export default function ContactSection(props: any) {
   const links = {
     email: 'mailto:dasarathy.ar@northeastern.edu',
-    linkedin: 'https://www.linkedin.com/in/aravind-dasarathy-149206126/',
-    github: 'https://github.com/aravind-dasarat'
+    linkedin: 'https://www.linkedin.com/in/aravind-dasarathy',
+    github: 'https://github.com/aravinddasarathy'
   };
 
   const styles = {
